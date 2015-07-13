@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html>
+
+    <head>
+        <title>Reglog</title>
+    </head>
+
+    <body>
+        <h1>{% if user.is_authenticated %}
+<h1>Reglog says... hello {{ user.username }}!</h1>
+{% else %}
+<h1>Reglog says... hello world!</h1>
+{% endif %}</h1>
+        hello world! <strong>{{ boldmessage }}</strong><br />
+        {% if user.is_authenticated %}
+<a href="/reglog/restricted/">Restricted Page</a><br />
+
+<a href="/reglog/logout/">Logout</a><br />
+{% else %}
+<a href="/reglog/register/">Register Here</a><br />
+<a href="/reglog/login/">Login</a><br />
+{% endif %}
+        
+    </body>
+
+</html>
